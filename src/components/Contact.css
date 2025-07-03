@@ -29,6 +29,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  padding: 0.25rem;
 }
 
 .contact-description {

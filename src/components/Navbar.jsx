@@ -42,6 +42,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className={`nav-link ${scrolled ? 'scrolled' : ''}`}
+                onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </a>
@@ -50,25 +51,23 @@ export default function Navbar() {
               href="#contact"
               className="cta-button"
             >
-              Get Started
+              <span>Get Started</span>
             </a>
           </nav>
 
           {/* Mobile menu button */}
-          <div className="mobile-menu-button">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="menu-button"
-              aria-expanded={isOpen}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <FiX className={`menu-icon ${scrolled ? 'scrolled' : ''}`} />
-              ) : (
-                <FiMenu className={`menu-icon ${scrolled ? 'scrolled' : ''}`} />
-              )}
-            </button>
-          </div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="mobile-menu-button"
+            aria-expanded={isOpen}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? (
+              <FiX className={`menu-icon ${scrolled ? 'scrolled' : ''}`} />
+            ) : (
+              <FiMenu className={`menu-icon ${scrolled ? 'scrolled' : ''}`} />
+            )}
+          </button>
         </div>
       </div>
 

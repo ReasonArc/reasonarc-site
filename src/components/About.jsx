@@ -1,64 +1,101 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { FiClock, FiDollarSign, FiTrendingUp, FiUsers, FiShield, FiZap } from 'react-icons/fi';
 import './About.css';
 
+const features = [
+  {
+    title: '24/7 Availability',
+    description: 'Operate around the clock without breaks or downtime, ensuring your business never sleeps.',
+    icon: <FiClock size={24} />
+  },
+  {
+    title: 'Cost Efficient',
+    description: 'Significantly reduce operational costs by automating routine and repetitive tasks.',
+    icon: <FiDollarSign size={24} />
+  },
+  {
+    title: 'Scalable',
+    description: 'Easily scale your operations up or down based on demand without additional overhead.',
+    icon: <FiTrendingUp size={24} />
+  },
+  {
+    title: 'Data Security',
+    description: 'Enterprise-grade security protocols to keep your data safe and compliant.',
+    icon: <FiShield size={24} />
+  },
+  {
+    title: 'Rapid Deployment',
+    description: 'Get started quickly with our plug-and-play AI solutions tailored to your needs.',
+    icon: <FiZap size={24} />
+  },
+  {
+    title: 'Seamless Integration',
+    description: 'Works seamlessly with your existing tools and workflows for maximum efficiency.',
+    icon: <FiUsers size={24} />
+  }
+];
+
 export default function About() {
+  // Add intersection observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fadeInUp');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="about" className="about-section">
       <div className="about-container">
         <div className="about-header">
-          <h2>
-            <span className="block">What Are</span>
-            <span className="gradient-text">
-              AI Agents?
-            </span>
+          <h2 className="animate-on-scroll">
+            Transform Your Business with <span className="gradient-text">AI Agents</span>
           </h2>
           <div className="about-description">
-            <p>
-              AI Agents are intelligent programs capable of perceiving, reasoning, and acting autonomously to 
-              accomplish business goals. From customer support to process automation and lead generation, 
-              AI agents are transforming how companies operate.
+            <p className="animate-on-scroll">
+              AI Agents are intelligent programs that perceive, reason, and act autonomously to accomplish 
+              your business goals. From customer support to process automation and lead generation, 
+              our AI solutions are transforming how companies operate in the digital age.
             </p>
           </div>
         </div>
 
         <div className="about-content">
-          <div className="aspect-w-16 aspect-h-9 w-full">
+          <div className="video-container animate-on-scroll">
             <iframe
-              className="w-full h-full"
               src="https://www.youtube.com/embed/E1E08i2UJGI"
-              title="What Are AI Agents"
+              title="AI Agents in Action"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              loading="lazy"
             ></iframe>
           </div>
-          <div className="p-6 sm:p-8">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Benefits of AI Agents</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-              {[
-                {
-                  title: '24/7 Availability',
-                  description: 'Operate around the clock without breaks or downtime',
-                  icon: '⏰'
-                },
-                {
-                  title: 'Cost Efficient',
-                  description: 'Reduce operational costs by automating routine tasks',
-                  icon: '💰'
-                },
-                {
-                  title: 'Scalable',
-                  description: 'Handle increasing workloads without additional resources',
-                  icon: '📈'
-                }
-              ].map((feature, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <div className="text-3xl mb-3">{feature.icon}</div>
-                  <h4 className="font-semibold text-gray-900">{feature.title}</h4>
-                  <p className="mt-2 text-gray-600 text-sm">{feature.description}</p>
+
+          <div className="features-grid animate-on-scroll">
+            {features.map((feature, index) => (
+              <div 
+                key={index} 
+                className="feature-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="icon">
+                  {feature.icon}
                 </div>
-              ))}
-            </div>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
