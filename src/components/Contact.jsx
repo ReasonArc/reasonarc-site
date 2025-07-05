@@ -16,6 +16,7 @@ export default function Contact() {
             Have a project in mind or want to learn more about our AI solutions? 
             Drop us a message and we'll get back to you within 24 hours.
           </p>
+          <h4 className="contact-description">**Limited Offer (Now Alive)** <span className="contact-subtitle">Free Personalised Demo</span> based on your custom requirement or idea.</h4>
         </div>
 
         <div className="contact-card">
@@ -33,7 +34,7 @@ export default function Contact() {
                     name="name"
                     required
                     className="form-input"
-                    placeholder="John Doe"
+                    placeholder="We know you are cool"
                   />
                 </div>
 
@@ -60,7 +61,7 @@ export default function Contact() {
                     name="message"
                     rows={4}
                     className="form-textarea"
-                    placeholder="Tell us about your project..."
+                    placeholder="Tell us about your need, project, hunch or idea..."
                     defaultValue={''}
                   />
                 </div>
@@ -89,7 +90,7 @@ export default function Contact() {
                   </div>
                   <div className="contact-text">
                     <h4>Email</h4>
-                    <p>contact@reasonarc.com</p>
+                    <p>reasonarc@gmail.com</p>
                   </div>
                 </div>
 
@@ -101,11 +102,13 @@ export default function Contact() {
                   </div>
                   <div className="contact-text">
                     <h4>Phone</h4>
-                    <p>+1 (555) 123-4567</p>
+                    <p>+91 9953115344</p>
                   </div>
                 </div>
+                
 
-                <div className="contact-item">
+                {/* TODO: Location Info removed, add it when decided */}
+                {/* <div className="contact-item">
                   <div className="contact-icon">
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -116,7 +119,7 @@ export default function Contact() {
                     <h4>Location</h4>
                     <p>123 AI Street, Tech City, TC 12345</p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <div className="social-section">

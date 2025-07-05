@@ -42,8 +42,8 @@ export default function Hero() {
         {/* Stats */}
         <div className="stats-grid">
           {[
-            { value: '95%', label: 'Client Satisfaction' },
-            { value: '3x', label: 'Faster Deployment' },
+            { value: '100%', label: 'Client Satisfaction' },
+            { value: 'Free', label: 'Personalised Demo' },
             { value: '24/7', label: 'Support' },
           ].map((stat, index) => (
             <div key={index} className="stat-card">
