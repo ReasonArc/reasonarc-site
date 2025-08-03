@@ -24,35 +24,37 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="contact-form-container">
               <form className="contact-form">
-                <div className="form-group">
-                  <label htmlFor="name" className="form-label">
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="form-input"
-                    placeholder="We know you are cool"
-                  />
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="name" className="form-label">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      className="form-control"
+                      placeholder="We know you are cool"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="email" className="form-label">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className="form-control"
+                      placeholder="you@example.com"
+                    />
+                  </div>
                 </div>
 
-                <div className="form-group">
-                  <label htmlFor="email" className="form-label">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="form-input"
-                    placeholder="you@example.com"
-                  />
-                </div>
-
-                <div className="form-group">
+                <div className="form-group full-width">
                   <label htmlFor="message" className="form-label">
                     Your Message
                   </label>
@@ -60,18 +62,31 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows={4}
-                    className="form-textarea"
+                    className="form-control"
                     placeholder="Tell us about your need, project, hunch or idea..."
                     defaultValue={''}
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group full-width" style={{ textAlign: 'right' }}>
                   <button
                     type="submit"
-                    className="submit-button"
+                    className="btn-submit"
                   >
                     Send Message
+                    <svg
+                      className="ml-2 -mr-1 w-5 h-5"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{ color: 'white' }}
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
                   </button>
                 </div>
               </form>

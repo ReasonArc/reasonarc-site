@@ -65,7 +65,7 @@
   position: relative;
   width: 100%;
   max-width: var(--max-w-7xl);
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 0 var(--spacing-4);
   z-index: 1;
   text-align: center;
@@ -215,19 +215,26 @@
 
 .cta-button.secondary {
   background-color: white;
-  color: var(--color-primary-800);
-  border: 2px solid var(--color-gray-200);
+  color: var(--color-primary-100);
+  border: 2px solid var(--color-primary-200);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .cta-button.secondary:hover {
-  border-color: var(--color-primary-300);
-  background-color: var(--color-gray-50);
+  background: var(--gradient-primary);
+  border-color: transparent;
   transform: translateY(-2px);
   color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button.secondary .icon {
-  stroke: var(--color-primary-600);
+  stroke: var(--color-primary-300);
+  transition: stroke 0.3s ease;
+}
+
+.cta-button.secondary:hover .icon {
+  stroke: white;
 }
 
 /* Stats Section */

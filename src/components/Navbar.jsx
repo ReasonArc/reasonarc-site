@@ -30,8 +30,12 @@ export default function Navbar() {
         <div className="navbar-inner">
           {/* Logo */}
           <div className="navbar-logo">
-            <a href="#home" className="logo-text">
-              ReasonArc
+            <a href="#home" className="logo-link">
+              <img 
+                src="/assets/static/LogoWithName.png" 
+                alt="ReasonArc" 
+                className="logo-image"
+              />
             </a>
           </div>
 

@@ -31,27 +31,42 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  height: 4rem;
+  height: 5.5rem; /* Increased from 5rem to accommodate larger logo */
+  padding: 0.5rem 0; /* Add some vertical padding */
+}
+
+/* Make navbar slightly taller when scrolled */
+.navbar-scrolled .navbar-inner {
+  height: 5rem; /* Increased from 4.5rem */
 }
 
 /* Logo */
-.navbar-logo .logo-text {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--color-primary-600);
+.navbar-logo .logo-link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  display: inline-block;
-  font-family: 'Poppins', sans-serif;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  height: 100%;
+}
+
+.navbar-logo .logo-image {
+  height: 3rem; /* Increased from 2.5rem to 3rem */
+  width: auto;
   transition: all 0.3s ease;
-  position: relative;
+  object-fit: contain;
+}
+
+/* Adjust logo size on scroll */
+.navbar-scrolled .logo-image {
+  height: 2.5rem; /* Increased from 2rem to 2.5rem */
+}
+
+/* Ensure logo is visible on all backgrounds */
+.navbar-logo .logo-image {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
   z-index: 2;
 }
 
-.navbar-logo .logo-text:hover {
+.navbar-logo .logo-link:hover .logo-image {
   transform: translateY(-1px);
   text-shadow: 0 4px 15px rgba(44, 93, 255, 0.2);
 }

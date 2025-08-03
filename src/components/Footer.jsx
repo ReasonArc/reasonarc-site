@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+const logoWithName = '/assets/static/LogoWithName.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -46,56 +47,61 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-grid">
-          {/* Brand section */}
-          <div className="footer-brand">
-            <div className="footer-logo">ReasonArc</div>
-            <p className="footer-tagline">
-              Empowering businesses with intelligent AI solutions that drive growth and innovation.
+        <div className="footer-content">
+          {/* Logo */}
+          <div className="footer-logo">
+            <a href="/" className="block">
+              <img 
+                src={logoWithName} 
+                alt="ReasonArc" 
+                className="h-10 w-auto"
+                width="200"
+                height="40"
+              />
+            </a>
+            <p className="mt-4 text-neutral-300 text-sm">
+              Making AI accessible for every business.
             </p>
-            <div className="social-links">
-              {socialLinks.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="social-link"
-                  aria-label={item.name}
-                >
-                  <span className="sr-only">{item.name}</span>
-                  <span className="social-icon">{item.icon}</span>
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Footer links */}
-          {footerLinks.map((section) => (
-            <div key={section.title} className="footer-section">
-              <h3 className="footer-section-title">
-                {section.title}
-              </h3>
-              <ul className="footer-links">
-                {section.links.map((item) => (
-                  <li key={item.name} className="footer-link-item">
-                    <a href={item.href}>
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {footerLinks.length > 0 && (
+            <>
+              {footerLinks.map((section) => (
+                <div key={section.title} className="footer-links">
+                  <h3>{section.title}</h3>
+                  <ul className="space-y-2">
+                    {section.links.map((link) => (
+                      <li key={link.name}>
+                        <a href={link.href} className="footer-link">
+                          {link.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </>
+          )}
         </div>
 
-        {/* Bottom footer */}
         <div className="footer-bottom">
           <p className="copyright">
             &copy; {currentYear} ReasonArc. All rights reserved.
           </p>
-          {/* TODO: Add Privacy Policy and Terms of Service links when ready */}
-          <div className="legal-links">
-            <a href="#" className="legal-link">Privacy Policy</a>
-            <a href="#" className="legal-link">Terms of Service</a>
+
+          <div className="social-links">
+            {socialLinks.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="social-link"
+                aria-label={item.name}
+              >
+                <span className="sr-only">{item.name}</span>
+                <span>{item.icon}</span>
+              </a>
+            ))}
           </div>
         </div>
       </div>
