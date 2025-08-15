@@ -7,14 +7,14 @@ export default function Contact() {
       <div className="contact-container">
         <div className="contact-header">
           <h2 className="contact-title">
-            <span>Get In Touch</span>
+            <span>Ready to Transform Your Business with AI?</span>
             <span className="contact-subtitle">
-              Let's Build Something Amazing
+              Let's Discuss Your AI Strategy
             </span>
           </h2>
           <p className="contact-description">
-            Have a project in mind or want to learn more about our AI solutions? 
-            Drop us a message and we'll get back to you within 24 hours.
+            Schedule a free 30-minute consultation with our AI experts. We'll analyze your business needs and 
+            outline a customized AI strategy to drive measurable results—with no obligation and no pressure.
           </p>
           <h4 className="contact-description">**Limited Offer (Now Alive)** <span className="contact-subtitle">Free Personalised Demo</span> based on your custom requirement or idea.</h4>
         </div>
@@ -35,7 +35,7 @@ export default function Contact() {
                       name="name"
                       required
                       className="form-control"
-                      placeholder="We know you are cool"
+                      placeholder="Your name"
                     />
                   </div>
 
@@ -49,7 +49,7 @@ export default function Contact() {
                       name="email"
                       required
                       className="form-control"
-                      placeholder="you@example.com"
+                      placeholder="Your business email"
                     />
                   </div>
                 </div>
@@ -63,7 +63,7 @@ export default function Contact() {
                     name="message"
                     rows={4}
                     className="form-control"
-                    placeholder="Tell us about your need, project, hunch or idea..."
+                    placeholder="Briefly describe your biggest business challenge or opportunity..."
                     defaultValue={''}
                   />
                 </div>
@@ -73,7 +73,7 @@ export default function Contact() {
                     type="submit"
                     className="btn-submit"
                   >
-                    Send Message
+                    Get Free AI Consultation
                     <svg
                       className="ml-2 -mr-1 w-5 h-5"
                       fill="currentColor"
@@ -104,7 +104,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="contact-text">
-                    <h4>Email</h4>
+                    <h4>Expert AI Consultation</h4>
                     <p>reasonarc@gmail.com</p>
                   </div>
                 </div>
@@ -116,8 +116,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="contact-text">
-                    <h4>Phone</h4>
-                    <p>+91 9953115344</p>
+                    <h4>Direct Support</h4>
+                    <p>+91 9953115344 (Mon-Fri, 9AM-6PM IST)</p>
                   </div>
                 </div>
                 
