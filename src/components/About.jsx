@@ -73,12 +73,14 @@ export default function About() {
         <div className="about-content">
           <div className="video-container animate-on-scroll">
             <iframe
-              src="https://www.youtube.com/embed/E1E08i2UJGI"
-              title="How AI Transforms Business Operations"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
+              width="914"
+              height="514"
+              src="https://www.youtube.com/embed/hQX_wIW9Nh0"
+              title="AI is transforming the world of work, are we ready for it? | FT Working It"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
             ></iframe>
           </div>
 
