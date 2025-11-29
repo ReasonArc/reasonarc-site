@@ -1,7 +1,47 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import './Contact.css';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+  const form = useRef();
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState({ type: '', message: '' });
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: '', message: '' });
+
+    const templateParams = {
+      name: form.current.name.value,
+      email: form.current.email.value,
+      message: form.current.message.value,
+      title: 'New Inquiry from ReasonArc Website',
+      time: new Date().toLocaleString(),
+    };
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setStatus({ type: 'success', message: 'Message sent successfully! We will get back to you soon.' });
+          form.current.reset();
+        },
+        (error) => {
+          setLoading(false);
+          setStatus({ type: 'error', message: 'Failed to send message. Please try again later.' });
+          console.error('FAILED...', error.text);
+        }
+      );
+  };
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
@@ -13,7 +53,7 @@ export default function Contact() {
             </span>
           </h2>
           <p className="contact-description">
-            Schedule a free 30-minute consultation with our AI experts. We'll analyze your business needs and 
+            Schedule a free 30-minute consultation with our AI experts. We'll analyze your business needs and
             outline a customized AI strategy to drive measurable results—with no obligation and no pressure.
           </p>
           <h4 className="contact-description">**Limited Offer (Now Alive)** <span className="contact-subtitle">Free Personalised Demo</span> based on your custom requirement or idea.</h4>
@@ -23,7 +63,7 @@ export default function Contact() {
           <div className="contact-grid">
             {/* Contact Form */}
             <div className="contact-form-container">
-              <form className="contact-form">
+              <form ref={form} onSubmit={sendEmail} className="contact-form">
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="name" className="form-label">
@@ -73,21 +113,37 @@ export default function Contact() {
                     type="submit"
                     className="btn-submit"
                   >
-                    Get Free AI Consultation
-                    <svg
-                      className="ml-2 -mr-1 w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                      style={{ color: 'white' }}
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    {loading ? 'Sending...' : 'Get Free AI Consultation'}
+                    {!loading && (
+                      <svg
+                        className="ml-2 -mr-1 w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style={{ color: 'white' }}
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
                   </button>
+                  {status.message && (
+                    <div
+                      style={{
+                        marginTop: '1rem',
+                        padding: '10px',
+                        borderRadius: '4px',
+                        backgroundColor: status.type === 'success' ? '#d4edda' : '#f8d7da',
+                        color: status.type === 'success' ? '#155724' : '#721c24',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {status.message}
+                    </div>
+                  )}
                 </div>
               </form>
             </div>
@@ -95,7 +151,7 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="contact-info">
               <h3>Contact Information</h3>
-              
+
               <div className="contact-details">
                 <div className="contact-item">
                   <div className="contact-icon">
@@ -120,7 +176,7 @@ export default function Contact() {
                     <p>+91 9953115344 (Mon-Fri, 9AM-6PM IST)</p>
                   </div>
                 </div>
-                
+
 
                 {/* TODO: Location Info removed, add it when decided */}
                 {/* <div className="contact-item">
