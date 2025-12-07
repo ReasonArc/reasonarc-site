@@ -1,6 +1,24 @@
 import React, { useEffect } from 'react';
-import { FiClock, FiDollarSign, FiTrendingUp, FiUsers, FiShield, FiZap } from 'react-icons/fi';
+import { FiClock, FiDollarSign, FiTrendingUp, FiUsers, FiShield, FiZap, FiMessageSquare, FiMail, FiBarChart2, FiCpu } from 'react-icons/fi';
 import './About.css';
+
+const services = [
+  {
+    title: 'AI Support Assistant',
+    description: 'AI assistant that answers customer queries from your own docs and FAQs.',
+    icon: <FiMessageSquare size={24} />
+  },
+  {
+    title: 'Lead & Email Automation',
+    description: 'Lead qualification and email follow‑up workflows that run automatically.',
+    icon: <FiMail size={24} />
+  },
+  {
+    title: 'Internal Tools',
+    description: 'Internal tools that summarise tickets, meetings, and documents for your team.',
+    icon: <FiBarChart2 size={24} />
+  }
+];
 
 const features = [
   {
@@ -15,12 +33,12 @@ const features = [
   },
   {
     title: 'Enterprise Scalability',
-    description: 'From startups to Fortune 500s, our solutions scale with your business needs without the growing pains of traditional scaling.',
+    description: 'Solutions designed by engineers from companies like Amazon and Cisco, with experience building distributed, scalable systems.',
     icon: <FiTrendingUp size={24} />
   },
   {
-    title: 'Military-Grade Security',
-    description: 'End-to-end encryption and compliance with global data protection standards keep your business-critical information secure.',
+    title: 'Security by Design',
+    description: 'We follow modern security best practices in how we design, build, and deploy your AI workflows. Data stays in your tools wherever possible, and we minimise what is stored or logged.',
     icon: <FiShield size={24} />
   },
   {
@@ -63,31 +81,39 @@ export default function About() {
           </h2>
           <div className="about-description">
             <p className="animate-on-scroll">
-              In today's fast-paced digital landscape, AI isn't just an advantage—it's a necessity. 
-              Our custom AI solutions transform complex business challenges into streamlined operations, 
-              giving you the competitive edge to outperform competitors and delight customers at every touchpoint.
+              In today's digital landscape, the fastest-growing businesses are the ones that turn AI into real, working automations—not just experiments.
             </p>
           </div>
         </div>
 
         <div className="about-content">
-          <div className="video-container animate-on-scroll">
-            <iframe
-              width="914"
-              height="514"
-              src="https://www.youtube.com/embed/hQX_wIW9Nh0"
-              title="AI is transforming the world of work, are we ready for it? | FT Working It"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+          <div className="services-section-header animate-on-scroll" style={{ textAlign: 'center', marginBottom: '0.5rem', width: '100%' }}>
+            <h3 style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--color-gray-900)' }}>Examples of What We Can Build For You</h3>
+          </div>
+          <div className="services-grid animate-on-scroll">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="service-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="icon">
+                  {service.icon}
+                </div>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="features-section-header animate-on-scroll" style={{ textAlign: 'center', marginBottom: '0.5rem', marginTop: '2rem', width: '100%' }}>
+            <h3 style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--color-gray-900)' }}>Why Choose Reasonarc</h3>
           </div>
 
           <div className="features-grid animate-on-scroll">
             {features.map((feature, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="feature-card"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >

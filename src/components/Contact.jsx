@@ -1,6 +1,19 @@
 import React, { useRef, useState } from 'react';
 import './Contact.css';
 import emailjs from '@emailjs/browser';
+import { FaXTwitter, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa6';
+
+const countryCodes = [
+  { code: '+1', country: 'US' },
+  { code: '+44', country: 'UK' },
+  { code: '+91', country: 'IN' },
+  { code: '+61', country: 'AU' },
+  { code: '+86', country: 'CN' },
+  { code: '+81', country: 'JP' },
+  { code: '+49', country: 'DE' },
+  { code: '+33', country: 'FR' },
+  { code: '+971', country: 'AE' },
+];
 
 export default function Contact() {
   const form = useRef();
@@ -15,6 +28,7 @@ export default function Contact() {
     const templateParams = {
       name: form.current.name.value,
       email: form.current.email.value,
+      phone: `${form.current.countryCode.value} ${form.current.phone.value}`,
       message: form.current.message.value,
       title: 'New Inquiry from ReasonArc Website',
       time: new Date().toLocaleString(),
@@ -56,7 +70,10 @@ export default function Contact() {
             Schedule a free 30-minute consultation with our AI experts. We'll analyze your business needs and
             outline a customized AI strategy to drive measurable results—with no obligation and no pressure.
           </p>
-          <h4 className="contact-description">**Limited Offer (Now Alive)** <span className="contact-subtitle">Free Personalised Demo</span> based on your custom requirement or idea.</h4>
+          <p className="contact-description" style={{ marginTop: '1rem', fontWeight: '500' }}>
+            In this call, we’ll identify one high‑impact workflow you can automate in the next 2–4 weeks.
+          </p>
+          <h4 className="contact-description">**Limited Offer (Now Alive)** <span className="contact-subtitle">Free Personalised Demo</span> based on your custom requirement or idea. The personalised demo will show a small working prototype tailored to your business or idea.</h4>
         </div>
 
         <div className="contact-card">
@@ -92,6 +109,32 @@ export default function Contact() {
                       placeholder="Your business email"
                     />
                   </div>
+
+                  <div className="form-group full-width">
+                    <label htmlFor="phone" className="form-label">
+                      Phone Number (Optional)
+                    </label>
+                    <div className="phone-input-group">
+                      <select
+                        name="countryCode"
+                        className="form-control country-select"
+                        defaultValue="+91"
+                      >
+                        {countryCodes.map((cc) => (
+                          <option key={cc.country} value={cc.code}>
+                            {cc.country} ({cc.code})
+                          </option>
+                        ))}
+                      </select>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        className="form-control phone-input"
+                        placeholder="12345 67890"
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <div className="form-group full-width">
@@ -103,7 +146,7 @@ export default function Contact() {
                     name="message"
                     rows={4}
                     className="form-control"
-                    placeholder="Briefly describe your biggest business challenge or opportunity..."
+                    placeholder="Briefly describe your biggest business challenge or opportunity or whatever you wanna reach us for..."
                     defaultValue={''}
                   />
                 </div>
@@ -161,7 +204,7 @@ export default function Contact() {
                   </div>
                   <div className="contact-text">
                     <h4>Expert AI Consultation</h4>
-                    <p>reasonarc@gmail.com</p>
+                    <p>contact@reasonarc.com</p>
                   </div>
                 </div>
 
@@ -173,7 +216,7 @@ export default function Contact() {
                   </div>
                   <div className="contact-text">
                     <h4>Direct Support</h4>
-                    <p>+91 9953115344 (Mon-Fri, 9AM-6PM IST)</p>
+                    <p>+91 9953115344 (Mon-Fri, 10AM-8PM IST)</p>
                   </div>
                 </div>
 
@@ -196,16 +239,23 @@ export default function Contact() {
               <div className="social-section">
                 <h4 className="social-title">Follow Us</h4>
                 <div className="social-links">
-                  {['Twitter', 'LinkedIn', 'GitHub'].map((social) => (
+                  {[
+                    { name: 'X (Twitter)', icon: <FaXTwitter />, url: '#' },
+                    { name: 'LinkedIn', icon: <FaLinkedin />, url: '#' },
+                    { name: 'GitHub', icon: <FaGithub />, url: '#' },
+                    { name: 'Instagram', icon: <FaInstagram />, url: '#' }
+                  ].map((social) => (
                     <a
-                      key={social}
-                      href="#"
+                      key={social.name}
+                      href={social.url}
                       className="social-link"
-                      aria-label={social}
+                      aria-label={social.name}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <span className="sr-only">{social}</span>
+                      <span className="sr-only">{social.name}</span>
                       <div className="social-icon">
-                        {social.charAt(0)}
+                        {social.icon}
                       </div>
                     </a>
                   ))}

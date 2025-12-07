@@ -167,6 +167,31 @@ textarea.form-control {
   resize: vertical;
 }
 
+/* Phone input group */
+.phone-input-group {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.country-select {
+  width: 100%;
+  padding-right: 1.25rem;
+  padding-left: 0.25rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.1rem center;
+  background-repeat: no-repeat;
+  background-size: 1.1em 1.1em;
+  text-overflow: clip;
+}
+
+.phone-input {
+  width: 100%;
+}
+
 /* Form fields - always stack vertically */
 .form-row {
   display: flex;
@@ -220,18 +245,18 @@ textarea.form-control {
   .contact-form {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   /* Keep form fields stacked vertically even on larger screens */
   .form-row {
     grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
   }
-  
+
   .form-group.full-width {
     width: 100%;
   }
-  
+
   .btn-submit {
     width: auto;
     min-width: 200px;
@@ -303,7 +328,7 @@ textarea.form-control {
     padding: 1.5rem;
     gap: 1rem;
   }
-  
+
   .btn-submit {
     width: 100%;
     max-width: 100%;
@@ -326,7 +351,7 @@ textarea.form-control {
   display: none;
 }
 
-.form-control:invalid + .error-message {
+.form-control:invalid+.error-message {
   display: block;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -524,7 +549,7 @@ textarea.form-control {
   .contact-grid {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .contact-form-container,
   .contact-info {
     padding: 2.5rem;
