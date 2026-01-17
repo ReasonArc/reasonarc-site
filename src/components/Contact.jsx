@@ -240,10 +240,10 @@ export default function Contact() {
                 <h4 className="social-title">Follow Us</h4>
                 <div className="social-links">
                   {[
-                    { name: 'X (Twitter)', icon: <FaXTwitter />, url: '#' },
-                    { name: 'LinkedIn', icon: <FaLinkedin />, url: '#' },
-                    { name: 'GitHub', icon: <FaGithub />, url: '#' },
-                    { name: 'Instagram', icon: <FaInstagram />, url: '#' }
+                    { name: 'X (Twitter)', icon: <FaXTwitter />, url: 'https://x.com/reason_arc' },
+                    { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://www.linkedin.com/company/reasonarc/' }
+                    // { name: 'GitHub', icon: <FaGithub />, url: '#' },
+                    // { name: 'Instagram', icon: <FaInstagram />, url: '#' }
                   ].map((social) => (
                     <a
                       key={social.name}
