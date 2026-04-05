@@ -17,9 +17,8 @@ export default function Hero() {
           </h1>
 
           <p className="hero-description">
-            Turn complex business challenges into competitive advantages with our custom AI solutions.
-            From automating routine tasks to powering data-driven decisions, we help businesses
-            like yours achieve more with less effort and greater accuracy.
+            We build custom AI automations — support bots, lead workflows, internal tools — and
+            ship them in 2–4 weeks, built around your existing workflow. No tech stack overhauls. No experiments. Working systems.
           </p>
 
           <div className="hero-buttons">
@@ -31,7 +30,7 @@ export default function Hero() {
             </a>
 
             <a href="#about" className="cta-button secondary">
-              <span>See AI in Action</span>
+              <span>Explore Our Work</span>
               <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -56,7 +55,7 @@ export default function Hero() {
         {/* Trusted by */}
         <div className="trusted-by">
           <div className="trusted-by-content">
-            <p>Empowering businesses across industries with intelligent automation</p>
+            <p>🟢 Currently accepting 2 pilot clients — <a href="#contact" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>book your free strategy call</a></p>
           </div>
         </div>
       </div>

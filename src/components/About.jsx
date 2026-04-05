@@ -22,18 +22,18 @@ const services = [
 
 const features = [
   {
-    title: '24/7 AI Workforce',
-    description: 'Deploy tireless AI agents that work around the clock, reducing response times from hours to seconds and never taking a break.',
+    title: 'Always-On Automation',
+    description: 'Your automations run around the clock — answering queries, routing emails, generating reports — so your team can focus on what matters.',
     icon: <FiClock size={24} />
   },
   {
-    title: 'Cost Optimization',
-    description: 'Cut operational costs by up to 40% by automating repetitive tasks and reducing human error in data processing.',
+    title: 'Reduce Manual Work',
+    description: 'Reclaim hours every week by automating the repetitive tasks your team does manually — data entry, email triage, report generation, and more.',
     icon: <FiDollarSign size={24} />
   },
   {
-    title: 'Enterprise Scalability',
-    description: 'Solutions designed by engineers from companies like Amazon and Cisco, with experience building distributed, scalable systems.',
+    title: 'Built by Big-Tech Engineers',
+    description: 'Our team brings hands-on engineering experience from Amazon and Cisco — the same rigour and reliability, now applied to your business.',
     icon: <FiTrendingUp size={24} />
   },
   {

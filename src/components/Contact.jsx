@@ -73,7 +73,13 @@ export default function Contact() {
           <p className="contact-description" style={{ marginTop: '1rem', fontWeight: '500' }}>
             In this call, we’ll identify one high‑impact workflow you can automate in the next 2–4 weeks.
           </p>
-          <h4 className="contact-description">**Limited Offer (Now Alive)** <span className="contact-subtitle">Free Personalised Demo</span> based on your custom requirement or idea. The personalised demo will show a small working prototype tailored to your business or idea.</h4>
+          <div className="limited-offer-banner">
+            <h4 className="contact-description">
+              <span className="offer-highlight">Limited Availability</span>{' '}
+              <span className="contact-subtitle">Free Personalised Demo</span>
+              {' '}&mdash; a small working prototype tailored to your business or idea, built around your specific use case.
+            </h4>
+          </div>
         </div>
 
         <div className="contact-card">
