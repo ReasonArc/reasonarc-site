@@ -17,8 +17,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-description">
-            We build custom AI automations — support bots, lead workflows, internal tools — and
-            ship them in 2–4 weeks, built around your existing workflow. No tech stack overhauls. No experiments. Working systems.
+            Getting the right AI services shouldn't be complicated. We build custom AI solutions—whether you need an intelligent support agent, a robust AI product, or a complex lead workflow built from the ground up. We ship in 2–4 weeks, built seamlessly around your existing operations. No tech stack overhauls. No experiments. Just reliable, working systems.
           </p>
 
           <div className="hero-buttons">

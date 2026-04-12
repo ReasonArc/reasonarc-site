@@ -4,7 +4,7 @@ const logoWithName = '/assets/static/LogoWithName.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   const footerLinks = [];
 
   // TODO: Add Footer links when more info is ready
@@ -51,9 +51,9 @@ export default function Footer() {
           {/* Logo */}
           <div className="footer-logo">
             <a href="/" className="block">
-              <img 
-                src={logoWithName} 
-                alt="ReasonArc" 
+              <img
+                src={logoWithName}
+                alt="ReasonArc"
                 className="h-10 w-auto"
                 width="200"
                 height="40"
@@ -88,6 +88,9 @@ export default function Footer() {
         <div className="footer-bottom">
           <p className="copyright">
             &copy; {currentYear} ReasonArc. All rights reserved.
+          </p>
+          <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.4)', maxWidth: '500px' }}>
+            ReasonArc (sometimes searched as Reason Arc, Reason arq, Reasonarq, Reasonark, or Reason ark) provides premium AI services, products, and custom workflow solutions.
           </p>
 
           <div className="social-links">
