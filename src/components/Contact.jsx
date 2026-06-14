@@ -76,7 +76,7 @@ export default function Contact() {
           <div className="limited-offer-banner">
             <h4 className="contact-description">
               <span className="offer-highlight">Limited Availability</span>{' '}
-              <span className="contact-subtitle">Free Personalised Demo</span>
+              <span className="contact-subtitle">Custom Workflow Prototype</span>
               {' '}&mdash; a small working prototype tailored to your business or idea, built around your specific use case.
             </h4>
           </div>

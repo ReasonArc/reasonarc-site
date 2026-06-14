@@ -1,47 +1,25 @@
 import React from 'react';
+import { FiTwitter, FiGithub, FiLinkedin } from 'react-icons/fi';
 import './Footer.css';
 const logoWithName = '/assets/static/LogoWithName.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = [];
-
-  // TODO: Add Footer links when more info is ready
-  // const footerLinks = [
-  //   {
-  //     title: 'Product',
-  //     links: [
-  //       { name: 'Features', href: '#' },
-  //       { name: 'Pricing', href: '#' },
-  //       { name: 'Case Studies', href: '#' },
-  //       { name: 'Updates', href: '#' },
-  //     ],
-  //   },
-  //   {
-  //     title: 'Company',
-  //     links: [
-  //       { name: 'About Us', href: '#' },
-  //       { name: 'Careers', href: '#' },
-  //       { name: 'Blog', href: '#' },
-  //       { name: 'Press', href: '#' },
-  //     ],
-  //   },
-  //   {
-  //     title: 'Support',
-  //     links: [
-  //       { name: 'Documentation', href: '#' },
-  //       { name: 'Community', href: '#' },
-  //       { name: 'Status', href: '#' },
-  //       { name: 'Contact Us', href: '#contact' },
-  //     ],
-  //   },
-  // ];
+  const footerLinks = [
+    {
+      title: 'Legal',
+      links: [
+        { name: 'Privacy Policy', href: '/privacy-policy' },
+        { name: 'Terms & Conditions', href: '/terms-conditions' },
+      ],
+    },
+  ];
 
   const socialLinks = [
-    { name: 'Twitter', href: '#', icon: '𝕏' },
-    { name: 'GitHub', href: '#', icon: '💻' },
-    { name: 'LinkedIn', href: '#', icon: '🔗' },
+    { name: 'Twitter', href: '#', icon: <FiTwitter size={20} /> },
+    { name: 'GitHub', href: '#', icon: <FiGithub size={20} /> },
+    { name: 'LinkedIn', href: '#', icon: <FiLinkedin size={20} /> },
   ];
 
   return (
@@ -102,7 +80,7 @@ export default function Footer() {
                 aria-label={item.name}
               >
                 <span className="sr-only">{item.name}</span>
-                <span>{item.icon}</span>
+                <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{item.icon}</span>
               </a>
             ))}
           </div>
