@@ -1,66 +1,61 @@
 import React from 'react';
 import './Hero.css';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
-    <section id="home" className="hero">
-      {/* Background pattern */}
-      <div className="hero-pattern" />
+    <section id="home" className="hero-section relative overflow-hidden">
+      {/* Animated Mesh Gradient Background */}
+      <div className="mesh-bg"></div>
 
-      <div className="hero-content">
-        <div className="hero-text">
-          <h1>
-            <span className="block">Accelerate Business Growth with</span>
-            <span className="gradient-text">
-              AI That Works for You
-            </span>
+      <div className="container relative z-10">
+        <div className="hero-content text-center">
+          
+          <h1 className="hero-headline">
+            We build custom AI automations to <span className="gradient-text">slash manual hours</span> and protect your profit margins.
           </h1>
 
-          <p className="hero-description">
-            Getting the right AI services shouldn't be complicated. We build custom AI solutions—whether you need an intelligent support agent, a robust AI product, or a complex lead workflow built from the ground up. We ship in 2–4 weeks, built seamlessly around your existing operations. No tech stack overhauls. No experiments. Just reliable, working systems.
+          <p className="hero-subheadline">
+            We audit your business and deploy custom workflows that eliminate bottlenecks. Built securely by Ex-Amazon & Cisco Engineers. No tech stack overhauls. Just reliable, working systems.
           </p>
 
-          <div className="hero-buttons">
-            <a href="#contact" className="cta-button primary">
-              <span>Book Your Free AI Consultation</span>
-              <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <div className="hero-cta-group">
+            <Link to="/free-automation-consultation" className="primary-button cta-main">
+              Book Your Free AI Consultation
+              <svg className="icon ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{marginLeft: '8px'}}>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </a>
+            </Link>
 
-            <a href="#about" className="cta-button secondary">
-              <span>Explore Our Work</span>
-              <svg className="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+            <a href="#services" className="secondary-button cta-sub">
+              Explore Our Work
             </a>
           </div>
-        </div>
 
-        {/* Stats */}
-        <div className="stats-grid">
-          {[
-            { value: '2-4', label: 'Weeks to First Automation' },
-            { value: 'Free', label: 'Personalised Demo' },
-            { value: 'Years', label: 'of Experience from Big Techs' },
-          ].map((stat, index) => (
-            <div key={index} className="stat-card">
-              <p className="stat-value">{stat.value}</p>
-              <p className="stat-label">{stat.label}</p>
+          {/* Stats Glass Panel */}
+          <div className="hero-stats glass-panel">
+            <div className="stat-item">
+              <span className="stat-title">2-4 Weeks</span>
+              <span className="stat-label">to First Automation</span>
             </div>
-          ))}
-        </div>
-
-        {/* Trusted by */}
-        <div className="trusted-by">
-          <div className="trusted-by-content">
-            <p>🟢 Currently accepting 2 pilot clients — <a href="#contact" style={{ color: 'var(--color-primary)', textDecoration: 'underline' }}>book your free strategy call</a></p>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-title">Live</span>
+              <span className="stat-label">Automation Mapping</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-title">Built by</span>
+              <span className="stat-label">Ex-Amazon & Cisco Engineers</span>
+            </div>
           </div>
+
+          <div className="trust-banner mt-8">
+            <p>🟢 Currently accepting 2 pilot clients — <Link to="/free-automation-consultation" className="trust-link">book your free strategy call</Link></p>
+          </div>
+
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
     </section>
   );
 }

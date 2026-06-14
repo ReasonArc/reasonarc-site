@@ -19,9 +19,9 @@ export default function Navbar() {
   }, [scrolled]);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/#about' },
+    { name: 'Contact', href: '/free-automation-consultation' },
   ];
 
   return (
@@ -30,7 +30,7 @@ export default function Navbar() {
         <div className="navbar-inner">
           {/* Logo */}
           <div className="navbar-logo">
-            <a href="#home" className="logo-link">
+            <a href="/" className="logo-link">
               <img 
                 src="/assets/static/LogoWithName.png" 
                 alt="ReasonArc" 
@@ -51,13 +51,17 @@ export default function Navbar() {
                 {item.name}
               </a>
             ))}
+          </nav>
+
+          {/* Desktop CTA */}
+          <div className="desktop-cta">
             <a
-              href="#contact"
+              href="/free-automation-consultation"
               className="cta-button"
             >
               <span>Get Started</span>
             </a>
-          </nav>
+          </div>
 
           {/* Mobile menu button */}
           <button
@@ -89,7 +93,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/free-automation-consultation"
             className="mobile-cta-button"
             onClick={() => setIsOpen(false)}
           >
