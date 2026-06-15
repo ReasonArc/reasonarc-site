@@ -125,7 +125,8 @@
   }
   
   .footer-links {
-    flex: 1;
+    flex: 0 0 auto;
+    margin-left: auto;
     margin-bottom: 0;
   }
   

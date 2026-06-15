@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FiTwitter, FiGithub, FiLinkedin } from 'react-icons/fi';
 import './Footer.css';
 const logoWithName = '/assets/static/LogoWithName.png';
@@ -17,9 +18,9 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { name: 'Twitter', href: '#', icon: <FiTwitter size={20} /> },
-    { name: 'GitHub', href: '#', icon: <FiGithub size={20} /> },
-    { name: 'LinkedIn', href: '#', icon: <FiLinkedin size={20} /> },
+    { name: 'Twitter', href: 'https://x.com/reason_arc', icon: <FiTwitter size={20} /> },
+    // { name: 'GitHub', href: '#', icon: <FiGithub size={20} /> },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/reasonarc', icon: <FiLinkedin size={20} /> },
   ];
 
   return (
@@ -28,7 +29,7 @@ export default function Footer() {
         <div className="footer-content">
           {/* Logo */}
           <div className="footer-logo">
-            <a href="/" className="block">
+            <Link to="/" className="block">
               <img
                 src={logoWithName}
                 alt="ReasonArc"
@@ -36,7 +37,7 @@ export default function Footer() {
                 width="200"
                 height="40"
               />
-            </a>
+            </Link>
             <p className="mt-4 text-neutral-300 text-sm">
               Making AI accessible for every business.
             </p>
@@ -51,9 +52,9 @@ export default function Footer() {
                   <ul className="space-y-2">
                     {section.links.map((link) => (
                       <li key={link.name}>
-                        <a href={link.href} className="footer-link">
+                        <Link to={link.href} className="footer-link">
                           {link.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

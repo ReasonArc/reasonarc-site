@@ -10,7 +10,7 @@ export default function Hero() {
 
       <div className="container relative z-10">
         <div className="hero-content text-center">
-          
+
           <h1 className="hero-headline">
             We build custom AI automations to <span className="gradient-text">slash manual hours</span> and protect your profit margins.
           </h1>
@@ -22,7 +22,7 @@ export default function Hero() {
           <div className="hero-cta-group">
             <Link to="/free-automation-consultation" className="primary-button cta-main">
               Book Your Free AI Consultation
-              <svg className="icon ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{marginLeft: '8px'}}>
+              <svg className="icon ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '8px' }}>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </Link>
@@ -50,9 +50,9 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="trust-banner mt-8">
+          {/* <div className="trust-banner mt-8">
             <p>🟢 Currently accepting 2 pilot clients — <Link to="/free-automation-consultation" className="trust-link">book your free strategy call</Link></p>
-          </div>
+          </div> */}
 
         </div>
       </div>
