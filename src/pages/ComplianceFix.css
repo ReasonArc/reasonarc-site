@@ -1,0 +1,139 @@
+/* ComplianceFix.css - Bank-Level Trust Theme */
+
+.compliance-page {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.compliance-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  position: relative;
+  z-index: 2;
+  flex: 1 0 auto;
+}
+
+.compliance-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.compliance-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.compliance-hero p {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.compliance-cta-container {
+  margin-top: 2rem;
+}
+
+.compliance-section {
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.compliance-section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.compliance-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.compliance-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.compliance-checklist li {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.compliance-checklist li span {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.compliance-cal-container {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-slate-200);
+  text-align: center;
+}
+
+.compliance-cal-container h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.compliance-cal-wrapper {
+  margin-top: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--shadow-premium);
+}
+
+/* Micro Footer */
+.compliance-footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--color-slate-200);
+  margin-top: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.compliance-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.compliance-footer-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.compliance-footer-link:hover {
+  color: var(--color-accent-600);
+}
+
+@media (max-width: 768px) {
+  .compliance-section {
+    padding: 1.5rem;
+  }
+  .compliance-footer-links {
+    gap: 1rem;
+    flex-direction: column;
+  }
+}

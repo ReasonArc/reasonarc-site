@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ICP from './components/ICP';
@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Consultation from './pages/Consultation';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
+import ComplianceFix from './pages/ComplianceFix';
 import './App.css';
 
 function LandingPage() {
@@ -28,18 +29,36 @@ function LandingPage() {
   );
 }
 
+function MainLayout() {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
+  );
+}
+
+function BlankLayout() {
+  return <Outlet />;
+}
+
 function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <Navbar />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/free-automation-consultation" element={<Consultation />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/free-automation-consultation" element={<Consultation />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
+          </Route>
+          
+          <Route element={<BlankLayout />}>
+            <Route path="/compliance-fix" element={<ComplianceFix />} />
+          </Route>
         </Routes>
-        <Footer />
       </div>
     </BrowserRouter>
   );
